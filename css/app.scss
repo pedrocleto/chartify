@@ -91,38 +91,37 @@ $font-family: Verdana;
 	outline: none;
 }
 
-.iframe_YTB{
-	display: block;
-}
 
 .mainHeader {
 	@include box-shadow(0px 3px 5px rgba(100, 100, 100, 0.49));
-	@include linear-gradient(LightSkyBlue, Navy);
+	background-color: LightSkyBlue;
 	display: inline-block;
 	position: absolute;
 	font-size: 18px;
-	line-height: 60px;
+	line-height: 40px;
 	color: white;
 	top: 0;
 	left: 0;
-	height: 60px;
+	height: 40px;
 	width: 100%;
 	vertical-align: middle;
 	text-rendering:optimizeLegibility;
 	text-indent: 20px;
 	overflow: hidden;
 	font-family: $font-family;
+	z-index: 1;
 }
 
 .mainDock
 {
 	display: block;
 	position: absolute;
-	top: 60px; right: 0; bottom: 0; left:0;
+	top: 0; right: 0; bottom: 0; left:0;
 	background-color: LightGray;
 	overflow: hidden;
 	zoom: 1;
 	font-family: $font-family;
+	z-index: 0;
 }
 
 .button{
@@ -139,37 +138,3 @@ $font-family: Verdana;
     opacity: 0.8;
     z-index: 100000;
 }
-
-
-.plusButton {
-	@extend .button;
-	background-image: url("add.svg");
-    bottom:2px;
-    left: 2px;
-}
-.plusButton:hover{
-    opacity: 0.9;
-}
-
-.plusButton:active{
-    opacity: 0.9;
-    border-style: inset;
-   	@include box-shadow(0);
-}
-
-.saveButton{
-	@extend .button;
-	background-image: url("save.svg");
-    bottom:2px;
-    right: 2px;
-}
-
-.saveButton:hover{
-    opacity: 0.9;
-}
-.saveButton:active{
-    opacity: 0.9;
-    border-style: inset;
-   	@include box-shadow(0);
-}
-

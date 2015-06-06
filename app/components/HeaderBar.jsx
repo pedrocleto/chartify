@@ -5,7 +5,7 @@ var HeaderBar = React.createClass({
   render: function() {
     return (
       <div className = "mainHeader">
- 		<label>Clipify</label>
+ 		<label>Chartify</label>
       </div>
     );
   }

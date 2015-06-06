@@ -1,14 +1,14 @@
 'use strict';
 
 var React = require('react/addons');
-var LinkBox = require('./LinkBox');
+var ChartBox = require('./ChartBox');
 var fire = require('../db/firebase');
 
 var MainDock = React.createClass({
 
 	getInitialState: function(){
     	return {link:"",
-    			clips:[]};
+    			charts:[]};
   	},
 
 	componentDidMount:function() {
@@ -18,11 +18,11 @@ var MainDock = React.createClass({
 		{
 			var id = pathArray[1];
 			if(id && id !='')
-				this.fire = fire.getRef().child('clips/'+id);
+				this.fire = fire.getRef().child('charts/'+id);
 		}
 		if(!this.fire)
 		{
-			newPostRef = fire.getRef().child('clips');
+			newPostRef = fire.getRef().child('charts');
 			this.fire = newPostRef.push({});
 		}
 		this.fire.on('value', this.updateMe);
@@ -42,9 +42,9 @@ var MainDock = React.createClass({
 			if(id && id !='')
 			{
 				this.fire.off('value', this.updateMe);
-				newPostRef = fire.getRef().child('clips');
+				newPostRef = fire.getRef().child('charts');
 				this.fire = newPostRef.push({});
-				window.history.pushState(null, "New Clip!", "/");
+				window.history.pushState(null, "New chart!", "/");
 				this.fire.on('value', this.updateMe);
 			}
 			
@@ -85,17 +85,15 @@ var MainDock = React.createClass({
 
 	saveClipsLink:function(ev){
 		ev.preventDefault();
-		window.history.pushState(null, "Clipified!", "/"+this.fire.key());
+		window.history.pushState(null, "Chartified!", "/"+this.fire.key());
 	},
 
 	render: function() {
 	    return (
 	      <div className = "mainDock">
-	      	{this.state.clips.map(function(result) {
-           		return <LinkBox key={result.id} data={result}/>;
+	      	{this.state.charts.map(function(result) {
+           		return <ChartBox key={result.id} data={result}/>;
         	})}
-	      	<div className="plusButton" onClick = {this.addClips} tooltip="Add Clip"></div>
-	      	<div className="saveButton" onClick = {this.saveClipsLink} tooltip="Save Clips"></div>
 	      </div>
 	    );
   	}

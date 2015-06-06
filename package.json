@@ -1,21 +1,21 @@
 {
-  "name": "Clipify",
+  "name": "Chartify",
   "version": "1.0.0",
-  "description": "Clips",
+  "description": "Charts",
   "scripts": {
     "start": "node server.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pedrocleto/clipify.git"
+    "url": "https://github.com/pedrocleto/chartify.git"
   },
   "author": "PCM",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pedrocleto/clipify/issues"
+    "url": "https://github.com/pedrocleto/chartify/issues"
   },
-  "homepage": "https://github.com/pedrocleto/clipify",
+  "homepage": "https://github.com/pedrocleto/chartify",
   "dependencies": {
     "css-loader": "^0.12.0",
     "file-loader": "*",
